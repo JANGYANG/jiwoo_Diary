@@ -1,35 +1,45 @@
+<div class="container">
 <h1>일기를 보는 페이지</h1>
 
 <div>
     <h4>TITLE</h4>
 </div>
 <div>
-    <p><%= @memo.title %></p>
+    <h5><%= @memo.title %></h5>
 </div>
 <div>
     <h4>content</h4>
 </div>
 <div>
-    <%= @memo.content %>
+    <p><%= @memo.content %></p>
 </div>
 
-<table>
-    <thead>
-        <th>작성날짜</th>
-        <th>수정날짜</th>
-    </thead>
-    <tbody>
-        <tr>
-            <td><%=@memo.created_at%></td>
-            <td><%=@memo.updated_at%></td>
-        </tr>
-    </tbody>
-</table>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <table width="100%">
+                <thead text-align="center">
+                    <th text-align="center">작성날짜</th>
+                    <th text-align="center">수정날짜</th>
+                </thead>
+                <tbody align="center" valign="center">
+                    <tr>
+                        <td align="center"><%=@memo.created_at.strftime("%Y.%m.%d")%></td>
+                        <td align="center"><%=@memo.updated_at.strftime("%Y.%m.%d")%></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
-<a href="/home/index"><button>목록</button></a>
+<div class="center">
+<a href="/home/index"><button class="btn btn-info">목록</button></a>
 
 
-<a href="/edit?id=<%=@memo.id%>"><button>수정</button></a>
+<a href="/edit?id=<%=@memo.id%>"><button class="btn btn-warning">수정</button></a>
 
 
-<a href="/delete?id=<%=@memo.id%>"><button>삭제</button></a>
+<a href="/delete?id=<%=@memo.id%>"><button class="btn btn-danger">삭제</button></a>
+</div>
+</div>
