@@ -1,9 +1,17 @@
-<h1>메모를 수정하는 페이지</h1>
-
+<div class="container">
+    <div class="row center">
+<h2>메모를 수정하는 페이지</h1>
+    </div>
+    <div class="row">
 <form action="/update?id=<%=@memo.id%>" method="POST">
-    <text>제목</text><br>
-    <input type="text" name="title" value="<%=@memo.title%>"><br>
-    <text>내용</text><br>
-    <textarea name="content"><%=@memo.content%></textarea>
-    <input type="submit" value="수정(Update Post)">
+    <label for="title">TITLE</label>
+    <input class="form-control" type="text" name="title" value="<%=@memo.title%>"><br>
+    <label for="content">CONTENT</label>
+    <textarea class="form-control" rows="10" name="content"><%=@memo.content%></textarea>
+    <input class="btn btn-info" style="margin-top:5px;" type="submit" value="수정(Update Post)">
 </form>
+    </div>
+    <div class="row" style="margin-top:5px">
+<a href="home/index"><button class="btn btn-warning">돌아가기</button></a>
+    </div>
+</div>
