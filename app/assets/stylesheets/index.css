@@ -5,6 +5,9 @@
 
 html, body, h1, h2, h3, h4, h5, h6, li, p, td, th{font-family:'Nanum Gothic';}
 
+table{
+    width:100%;
+}
 
 .center{
     text-align: center;
@@ -14,3 +17,4 @@ html, body, h1, h2, h3, h4, h5, h6, li, p, td, th{font-family:'Nanum Gothic';}
 th{
     text-align: center; 
 }
+

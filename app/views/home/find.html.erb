@@ -1,6 +1,26 @@
-<form action="/home/search" method="POST">
-    <text>제목</text><br>
-    <input type="text" name="title"><br>
-    <input type="submit" value="검색(Search Post)">
-</form>
-<a href="index"><button>돌아가기</button></a>
+<div class="container">
+    <div class="row center">
+        <h2>이곳은 검색 페이지</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <form action="/home/search" method="POST">
+            <label for="title">제목</label>
+            <input class="form-control" type="text" name="title">
+            <table>
+                <tbody>
+                    <td>
+                <input class="btn btn-warning" type="submit" value="검색(Search Post)" style="width:150px">
+                    </td>
+                    <td style="text-align:right;">
+                <a href="index"><button class="btn btn-primary" style="width:150px">돌아가기</button></a>
+                    </td>
+                </tbody>
+            </table>
+        </form>
+        </div>
+    </div>
+    
+
+
+</div>
