@@ -1,31 +1,30 @@
-<h1>메모를 보는 페이지</h1>
+<h1>일기를 보는 페이지</h1>
 
-<table>
-    <thead>
-    </thead>
-    <tbody>
-        <tr>
-            <td><h6>제목</h6></td>
-            <td><%=@memo.title%></td>
-        </tr>
-        <tr>
-            <td><h6>내용</h6></td>
-            <td><%=@memo.content%></td>
-        </tr>
-    </tbody>
-</table>
+<div>
+    <h4>TITLE</h4>
+</div>
+<div>
+    <p><%= @memo.title %></p>
+</div>
+<div>
+    <h4>content</h4>
+</div>
+<div>
+    <%= @memo.content %>
+</div>
+
 <table>
     <thead>
         <th>작성날짜</th>
         <th>수정날짜</th>
     </thead>
     <tbody>
-        <td><%=@memo.created_at.strftime("%Y.%m.%d")%></td>
-        <td><%=@memo.updated_at.strftime("%Y.%m.%d")%></td>
+        <tr>
+            <td><%=@memo.created_at%></td>
+            <td><%=@memo.updated_at%></td>
+        </tr>
     </tbody>
 </table>
-
-
 
 <a href="/home/index"><button>목록</button></a>
 
