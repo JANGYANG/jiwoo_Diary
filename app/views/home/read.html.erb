@@ -19,8 +19,8 @@
         <div class="col-md-4 col-md-offset-4">
             <table width="100%">
                 <thead text-align="center">
-                    <th text-align="center">작성날짜</th>
-                    <th text-align="center">수정날짜</th>
+                    <th style="text-align:center;">작성날짜</th>
+                    <th style="text-align:center;">수정날짜</th>
                 </thead>
                 <tbody align="center" valign="center">
                     <tr>
@@ -33,13 +33,15 @@
     </div>
 </div>
 
-<div class="center">
-<a href="/home/index"><button class="btn btn-info">목록</button></a>
+
+<div class="container">
+    <div class="row center">
+        <a href="/home/index"><button class="btn btn-info">목록</button></a>
 
 
-<a href="/edit?id=<%=@memo.id%>"><button class="btn btn-warning">수정</button></a>
+        <a href="/edit?id=<%=@memo.id%>"><button class="btn btn-warning">수정</button></a>
 
 
-<a href="/delete?id=<%=@memo.id%>"><button class="btn btn-danger">삭제</button></a>
-</div>
+        <a href="/delete?id=<%=@memo.id%>"><button class="btn btn-danger">삭제</button></a>
+    </div>
 </div>
