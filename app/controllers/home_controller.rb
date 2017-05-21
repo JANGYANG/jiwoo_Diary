@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @memo = Memo.all
+    @memo = Memo.all.order("id desc")
   end
 
   def new
