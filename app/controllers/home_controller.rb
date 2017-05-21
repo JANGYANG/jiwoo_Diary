@@ -50,10 +50,12 @@ class HomeController < ApplicationController
     
     @title = params[:title]
     @memo = Memo.where("title like ?", "%#{@title}%")
-    
-    
-    
+  end
   
+  
+  def comment
+    @comment = Comment.create(:writer => params[:comment_writer], :content => params[:comment_content], :password => params[:password])
+    redirect_to ''
   end
   
 end

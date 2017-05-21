@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'user/login'
+
   # skip_before_filter :verify_authenticity_token
   
   
@@ -23,6 +25,12 @@ Rails.application.routes.draw do
   get 'home/find' => "home#find"
   
   post 'home/search' => 'home#search'
+  
+  post '/comment' => 'home#comment'
+  
+  post '/user/certificate' => 'user#certificate'
+  
+  get '/user/logout' => 'user#logout'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
