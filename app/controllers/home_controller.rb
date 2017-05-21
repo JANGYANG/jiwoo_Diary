@@ -17,6 +17,7 @@ class HomeController < ApplicationController
 
   def read
     @memo = Memo.where(id: params[:id]).first
+    @memo_comments = @memo.memo_comments
   end
 
   def edit
@@ -54,8 +55,26 @@ class HomeController < ApplicationController
   
   
   def comment
-    @comment = Comment.create(:writer => params[:comment_writer], :content => params[:comment_content], :password => params[:password])
-    redirect_to ''
+    # new_comment = MemoComment.new
+    # new_comment.writer = params[:comment_writer]
+    # new_comment.content = params[:comment_content]
+    # new_comment.password = params[:comment_password]
+    # new_comment.memo_id = params[:memo_id]
+    # new_comment.save
+    MemoComment.create(:writer => params[:comment_writer], :content => params[:comment_content], :password => params[:comment_password], :memo_id => params[:memo_id])
+    redirect_to '/home/read/' + params[:memo_id]
+  end
+  
+  def comment_delete
+    @comment = MemoComment.find(params[:comment_id])
+  end
+  
+  def comment_absolutely_delete
+    MemoComment.find(params[:comment_id]).destroy if params[:password] == params[:comment_password]
+    
+    redirect_to '/home/read/' + params[:memo_id]
+    
+      
   end
   
 end

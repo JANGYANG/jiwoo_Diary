@@ -18,3 +18,12 @@ th{
     text-align: center; 
 }
 
+label.comments{
+    font-size:50%;
+}
+
+input.comments{
+    height:50%;
+    font-size: 50%;
+}
+

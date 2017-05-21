@@ -26,7 +26,11 @@ Rails.application.routes.draw do
   
   post 'home/search' => 'home#search'
   
-  post '/comment' => 'home#comment'
+  post '/comment/:memo_id' => 'home#comment'
+  
+  get '/comment_delete/:comment_id' => 'home#comment_delete'
+  
+  post '/comment_absolutely_delete' => 'home#comment_absolutely_delete'
   
   post '/user/certificate' => 'user#certificate'
   

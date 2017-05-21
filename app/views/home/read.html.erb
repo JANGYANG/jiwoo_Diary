@@ -31,23 +31,57 @@
             </table>
         </div>
     </div>
+    <hr>
 </div>
 
 <div class="container">
-    <form action="/comment" method="POST">
-    
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <table class="table">
+                <thead>
+                    <th style="width:20%">지우의 누구?</th>
+                    <th style="width:60%">소감이나 할말!</th>
+                    <th style="width:15%">댓글 남긴 날짜!</th>
+                    <th style="width:5%;"></th>
+                </thead>
+                <tbody>
+                    <% @memo_comments.each do |c| %>
+                    <tr>
+                        <td><%=c.writer%></td>
+                        <td><%=c.content%></td>
+                        <td><%=c.created_at.strftime("%Y.%m.%d")%></td>
+                        <td>
+                            <a href="/comment_delete/<%= c.id%>">
+                            <button class="btn btn-xs btn-danger opacity" style="opacity:50%">
+                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                            </button>
+                            </a>
+                        </td>
+                    </tr>
+                    <%end%>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <form action="/comment/<%= @memo.id %>" method="POST">
+   
     <div class="row">
         <div class="col-md-2 col-md-offset-2">
-            <label for="writer">누구!?</label>
-            <input class="form-control" type="text" name="comment_writer">
+            <label class="comments" for="writer">누구!?</label>
+            <input class="form-control comments" type="text" name="comment_writer">
         </div>
-        <div class="col-md-4">
-            <label for="content">내용!?</label>
-            <input class="form-control"type="text" name="comment_content">
+        <div class="col-md-5">
+            <label class="comments" for="content">내용!?</label>
+            <input class="form-control comments"type="text" name="comment_content">
         </div>
-        <div class="col-md-2">
-            <label for="password">암호!?</label>
-            <input class="form-control" type="password" name="comment_password">
+        <div class="col-md-1">
+            <label class="comments" for="password">암호!?</label>
+            <input class="form-control comments" type="password" name="comment_password">
         </div>
     </div>
     <div class="row"  style="margin-top:10px;">
