@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2">
-            <h1 class="center" style="color:black">사랑하는 지우<a href="/user/login" style="color:black;">의</a> 일기장</h1>
+            <h1 class="center" style="color:black">지우<a href="/user/login" style="color:black;">의</a> 일기장</h1>
         </div>
     </div>
 </div>
@@ -18,11 +18,13 @@
     </thead>
     <tbody>
         <% @memo.each do |t| %>
+            <% session["#{t.id}"] = false %>
             <tr>
-            <td><%= t.created_at.strftime("%Y/%m/%d") %></td>
-            <td><%= t.title %></td>
-            <td><%= t.content %></td>
-            <td><a href="/home/read/<%= t.id%>"><button class="btn btn-danger">GO</button></a></td>
+            <td style="width:10%;vertical-align:middle;"><%= t.created_at.strftime("%Y/%m/%d") %></td>
+            <td style="width:15%;vertical-align:middle;"><%= t.title %></td>
+            <td style="width:55%;vertical-align:middle;"><%= t.content %></td>
+            <td style="width:10%;vertical-align:middle;"><img src="<%= asset_path "like.png"%>" style="width:30%;margin-bottom:5px"></img> <%=t.loves%>개</td>
+            <td style="width:10%;vertical-align:middle;"><a href="/home/read/<%= t.id%>"><button class="btn btn-danger">GO</button></a></td>
             </tr>
         <% end %>
     </tbody>

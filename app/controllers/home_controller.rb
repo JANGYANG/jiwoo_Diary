@@ -73,8 +73,21 @@ class HomeController < ApplicationController
     MemoComment.find(params[:comment_id]).destroy if params[:password] == params[:comment_password]
     
     redirect_to '/home/read/' + params[:memo_id]
-    
-      
+  end
+  
+  def mandoo
+    id = params[:id]
+    @memo = Memo.find(id)
+    if session["#{id}"]
+      @memo.loves -= 1
+      @memo.save
+      session["#{id}"] = false
+    else
+      @memo.loves += 1
+      @memo.save
+      session["#{id}"] = true
+    end
+    redirect_to "/home/read/" + id
   end
   
 end

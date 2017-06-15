@@ -32,6 +32,23 @@
         </div>
     </div>
     <hr>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4" style="text-align:center;">
+            <img src="<%=asset_path 'like.png' %>" style="width:10%;margin-bottom:0px;"></img>
+            <h5>뜨거운 만두 <%= @memo.loves %>  개</h5>
+        </div>
+        <br>
+        <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4" style="text-align:center;">
+            <% if session["#{@memo.id}"] %>
+                <a href="/mandoo/<%=@memo.id%>"><img src="<%=asset_path 'like.png' %>" style="width:10%;margin-bottom:0px;"></img></a>
+                <h5>만두 식히기</h5>
+            <% else %>
+                <a href="/mandoo/<%=@memo.id%>"><img src="<%=asset_path 'unlike.png' %>" style="width:10%;margin-bottom:0px;"></img></a>
+                <h5>만두 데우기</h5>
+            <% end %>
+        </div>
+    </div>
+    <hr>
 </div>
 
 <div class="container">

@@ -35,6 +35,8 @@ Rails.application.routes.draw do
   post '/user/certificate' => 'user#certificate'
   
   get '/user/logout' => 'user#logout'
+  
+  get '/mandoo/:id' => 'home#mandoo'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
