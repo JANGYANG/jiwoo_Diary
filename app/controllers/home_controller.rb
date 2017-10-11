@@ -50,7 +50,9 @@ class HomeController < ApplicationController
     # @data = @users.where(users[:description].matches("%#{@name}%")).order("created_at desc").excludes(:id=> current_user.id)
     
     @title = params[:title]
-    @memo = Memo.where("title like ?", "%#{@title}%")
+    @memo = Memo.where("title LIKE ?", "%#{@title}%")
+    # Client.where("orders_count = ? AND locked = ?", params[:orders], false)
+
   end
   
   

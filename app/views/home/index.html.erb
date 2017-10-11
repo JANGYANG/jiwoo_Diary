@@ -13,7 +13,8 @@
     <thead>
         <th>DATE</th>
         <th>TITLE</th>
-        <th>MEMO</th>
+        <th style="text-align:center">MANDOO</th>
+        <th style="text-align:center">COMMENT</th>
         <th></th>
     </thead>
     <tbody>
@@ -21,10 +22,10 @@
             <% session["#{t.id}"] = false %>
             <tr>
             <td style="width:10%;vertical-align:middle;"><%= t.created_at.strftime("%Y/%m/%d") %></td>
-            <td style="width:15%;vertical-align:middle;"><%= t.title %></td>
-            <td style="width:55%;vertical-align:middle;"><%= t.content %></td>
-            <td style="width:10%;vertical-align:middle;"><img src="<%= asset_path "like.png"%>" style="width:30%;margin-bottom:5px"></img> <%=t.loves%>개</td>
-            <td style="width:10%;vertical-align:middle;"><a href="/home/read/<%= t.id%>"><button class="btn btn-danger">GO</button></a></td>
+            <td style="width:60%;vertical-align:middle;"><%= t.title %></td>
+            <td style="width:10%;vertical-align:middle;text-align:center"><img src="<%= asset_path "like.png"%>" style="width:30%;margin-bottom:5px"></img> <%=t.loves%>개</td>
+            <td style="width:10%;vertical-align:middle;text-align:center"><%=t.memo_comments.size%>개</td>
+            <td style="width:10%;vertical-align:middle;text-align:center"><a href="/home/read/<%= t.id%>"><button class="btn btn-danger">GO</button></a></td>
             </tr>
         <% end %>
     </tbody>
